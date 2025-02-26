@@ -1,12 +1,17 @@
 import React from 'react'
 import Video2 from '../assests/Video2.mp4'
 import profileImg from '../assests/profile.jpg'
+import { useParams } from 'react-router-dom'
 
 const Leftvideo = () => {
+  const {videoid} = useParams()
   return (
     <div className='bodeylefta'>
     <div className="bodeyleftainner">
-         <video src={Video2} className='vidoin' controls></video>
+         <iframe 
+         className='vidoin'
+         title="YouTube video player"  src={`https://www.youtube.com/embed/${videoid}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+         />
          <div className="cap">
             <h1>Ginny and Geogia</h1>
             <div className='capp'>

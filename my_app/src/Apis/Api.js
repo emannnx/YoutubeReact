@@ -8,12 +8,12 @@ export const get_popular_videos = async () => {
         params: {
             part: "snippet",
             chart: "mostPopular",
-            regionCode: "US",
-            maxResults: 10,
+            regionCode: "NG",
+            maxResults:40,
             key: "AIzaSyCmpumZE2pz-Vk8vTlB_5jWNBHc8pyEvDs"
         }
       });
-      console.log(response)
+     return response.data.items
     }catch(error){
             console.log(error)
     }

@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Video from '../assests/Video!.mp4';
 import profile from '../assests/profile.jpg';
 import Videopage from './Videopage';
 import { Link } from 'react-router-dom'
+import { get_popular_videos } from '../Apis/Api';
+import moment from 'moment';
 
 const Bodyright = () => {
+
+  const [vids,setVids] = useState([])
+
+  // Rendring the videos api
+  useEffect(()=>{
+    const fetch_videos = async()=>{
+      try{
+        const response = await get_popular_videos();
+      setVids(response)
+      } catch(error){
+        console.error(error);
+      }
+    } 
+
+    fetch_videos()
+  })
   // Menu items for the header
   const menuItems = [
     { id: 1, name: 'Source Code' },
@@ -26,225 +44,7 @@ const Bodyright = () => {
   ];
 
   // Video content array
-  const videos = [
-    {
-      id: 1,
-      title: 'Tokyo Ghoul animation by Iman Olabode-Bello',
-      channel: 'Anime GO',
-      views: '178K views',
-      time: '1 year ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
-    {
-      id: 2,
-      title: 'Tokyo Ghoul animation from Iman',
-      channel: 'Anime GO',
-      views: '188K views',
-      time: '2 years ago',
-      videoSrc: Video,
-      profileImg: profile,
-    },
 
-  ];
 
   return (
     <div className="right-body">
@@ -260,17 +60,17 @@ const Bodyright = () => {
 
         {/* Video content */}
         <div className="video-content">
-          {videos.map((video) => (
+          {vids?.map((video) => (
            
-              <Link to = 'Videopage'> 
+              <Link to = {`/${video.id}`} style={{textDecoration:"none"}}> 
                <div key={video.id} className="rightBodyContent">
-              <video src={video.videoSrc} className="bodyVideo" controls></video>
+              <img src={video?.snippet?.thumbnails?.high?.url} className="bodyVideo" />
               <div className="Captionn">
-                <img src={video.profileImg} alt="profile" className="cationimg" />
+                <img src={video?.snippet?.thumbnails?.high?.url} alt="profile" className="cationimg" />
                 <div className="video-info" style={{ height: 120, width: 390 }}>
-                  <h4>{video.title}</h4>
-                  <p>{video.channel}</p>
-                  <p>{video.views} • {video.time}</p>
+                  <h4>{video?.snippet?.description.slice(0,70)}</h4>
+                  <p>{video?.snippet?.channelTitle}</p>
+                  <p> 345k • {moment(video?.snippet?.publishedAt).fromNow()}</p>
                 </div>
               </div>
             </div>

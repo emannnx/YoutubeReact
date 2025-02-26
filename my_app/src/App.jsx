@@ -11,7 +11,7 @@ const App = () => {
     <Routes>
       <Route index element={<Home/>}/>
       {/* <Route path='/home' element = {<Navigate to= '/'/>}/> */}
-      <Route path='/Videopage' element ={ <Videopage /> }/>
+      <Route path='/:videoid' element ={ <Videopage /> }/>
     </Routes>
     </BrowserRouter>
   )
